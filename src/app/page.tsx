@@ -4,8 +4,48 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import Slider from "@/components/splide/slide";
+
+interface dataMembers {
+  name: string;
+  proffesion: string;
+  avatarUrl: string;
+}
 
 export default function Component() {
+  const dataMembers: dataMembers[] = [
+    {
+      name: "Saeful",
+      proffesion: "Frontend Dev",
+      avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&s",
+    },
+    {
+      name: "Ibnu",
+      proffesion: "Cyber Security",
+      avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&s",
+    },
+    {
+      name: "Badruz",
+      proffesion: "Cyber Security",
+      avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&s",
+    },
+    {
+      name: "Test001",
+      proffesion: "Frontend Dev",
+      avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&s",
+    },
+    {
+      name: "Test002",
+      proffesion: "Cyber Security",
+      avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&s",
+    },
+    {
+      name: "Test003",
+      proffesion: "Cyber Security",
+      avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&s",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="px-4 bg-gradient-to-r from-gray-600 to-gray-800 lg:px-6 h-14 flex items-center">
@@ -30,7 +70,7 @@ export default function Component() {
             className="text-sm font-medium hover:underline underline-offset-4"
             prefetch={false}
           >
-            Clients
+            Team
           </Link>
           <Link
             href="#"
@@ -66,7 +106,7 @@ export default function Component() {
             <img
               src="/ilustration-badge-preview.png"
               alt="Hero"
-              className="mx-auto overflow-hidden rounded-xl object-cover sm: lg:order-last lg:aspect-square"
+              className="mx-auto overflow-hidden rounded-xl object-cover sm: w-96 -mt-12 lg:order-last lg:aspect-square"
             />
           </div>
         </section>
@@ -81,49 +121,41 @@ export default function Component() {
                   Our Services
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We provide comprehensive security solutions for your website,
-                  professional website development, and custom Android
-                  application creation.
+                  We provide robust security solutions for your website and
+                  professional web development services to elevate your online
+                  presence.
                 </p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <img
-                src="/placeholder.svg"
+                src="https://cdn.prod.website-files.com/6364b6fd26e298b11fb9391f/6364b6fd26e298b303b93d91_3d-tb-education.png"
                 width="550"
                 height="310"
                 alt="Image"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                className="mx-auto overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               />
               <div className="flex flex-col justify-center space-y-4">
                 <ul className="grid gap-6">
                   <li>
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Security Solutions</h3>
-                      <p className="text-muted-foreground">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Quisque non tempus ante. Sed vitae risus in sapien
-                        sollicitudin laoreet vitae et leo.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Android Development</h3>
-                      <p className="text-muted-foreground">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Quisque non tempus ante. Sed vitae risus in sapien
-                        sollicitudin laoreet vitae et leo.
+                      <p className="text-muted-foreground xl:w-full lg: w-3/2">
+                        Our team of experts is ready to help identify and fix
+                        security vulnerabilities on your website. We also offer
+                        consulting and security services to ensure that your
+                        systems are always protected from cyber threats.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Web Development</h3>
-                      <p className="text-muted-foreground">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Quisque non tempus ante. Sed vitae risus in sapien
-                        sollicitudin laoreet vitae et leo.
+                      <p className="text-muted-foreground xl:w-full lg: w-3/2">
+                        We provide comprehensive web development services,
+                        covering everything from responsive design to robust
+                        backend integration. We create websites that are not
+                        only visually appealing but also functional and secure.
                       </p>
                     </div>
                   </li>
@@ -154,13 +186,6 @@ export default function Component() {
               >
                 Contact
               </Link>
-              <Link
-                href="#"
-                className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                prefetch={false}
-              >
-                Schedule a Consultation
-              </Link>
             </div>
           </div>
         </section>
@@ -180,37 +205,8 @@ export default function Component() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <Avatar>
-                  <AvatarImage src="/placeholder-user.jpg" alt="John Doe" />
-                  <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
-                <div className="text-center">
-                  <h3 className="text-xl font-bold">John Doe</h3>
-                  <p className="text-muted-foreground">Android Developer</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <Avatar>
-                  <AvatarImage src="/placeholder-user.jpg" alt="John Doe" />
-                  <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
-                <div className="text-center">
-                  <h3 className="text-xl font-bold">John Doe</h3>
-                  <p className="text-muted-foreground">Web Developer</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <Avatar>
-                  <AvatarImage src="/placeholder-user.jpg" alt="John Doe" />
-                  <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
-                <div className="text-center">
-                  <h3 className="text-xl font-bold">John Doe</h3>
-                  <p className="text-muted-foreground">Cyber Security</p>
-                </div>
-              </div>
+            <div className="pt-12">
+              <Slider propsData={dataMembers} />
             </div>
           </div>
         </section>
@@ -226,32 +222,25 @@ export default function Component() {
                   below and we'll get back to you as soon as possible.
                 </p>
               </div>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      placeholder="Enter your name"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="Enter your email"
-                      className="w-full"
-                    />
-                  </div>
+              <form className="grid gap-4 text-left gap-y-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" placeholder="Enter your name" />
                 </div>
-                <div className="space-y-2">
+                <div className="grid gap-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div className="grid gap-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
                     placeholder="Enter your message"
-                    className="w-full min-h-[150px]"
+                    className="min-h-[150px]"
                   />
                 </div>
                 <Button type="submit" className="w-full">
@@ -345,65 +334,6 @@ function InstagramIcon(props: any) {
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  );
-}
-
-function LinkedinIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  );
-}
-
-function ShieldIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-    </svg>
-  );
-}
-
-function TwitterIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
     </svg>
   );
 }
